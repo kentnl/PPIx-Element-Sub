@@ -1,0 +1,106 @@
+# NAME
+
+PPIx::Element::Sub - Find subroutines associated with any element.
+
+# VERSION
+
+version 0.001000
+
+# SYNOPSIS
+
+    use PPIx::Element::Sub qw( identify_associated_sub );
+
+    my $assoc_sub = identify_associated_sub( $comment_element );
+
+# DESCRIPTION
+
+This module contains a handful of utility functions for finding logical `PPI`
+nodes in the relative proximity of any given `element`.
+
+It contains three primary exportable utility functions:
+
+- `identify_sub` - Find a logically enclosing sub
+- `identify_next_sub` - Find a logically succeeding sub
+- `identify_associated_sub` - Find a logically enclosing sub, or if none,
+a logically succeeding sub.
+
+# FUNCTIONS
+
+## identify\_sub
+
+Given an `element`, ascertain the logical `sub` that contains it.
+
+    my $sub = identify_sub( $element )
+
+Due to structure of `PPI` documents, this is simply the nearest `parent` of
+`element` that is a `sub`, which could be the `element` itself.
+
+    package Foo;  # undef
+                  # ↑
+    sub           # sub 'bar'
+    bar           # ↑
+    {             # ↑
+                  # ↑
+    }             # ↑
+                  # undef
+
+Returns `undef` if no `sub` parent can be derived.
+
+## identify\_next\_sub
+
+Given an `element`, ascertain the _next_ `sub` that appears logically
+_after_ it in the document.
+
+    my $sub = identify_next_sub( $element );
+
+Returns `undef` if no `next` &lt;sub> can be found.
+
+    package Foo;  # sub 'bar'
+                  # ↑
+    sub           # quux
+    bar           # ↑
+    {             # ↑
+                  # ↑
+    }             # ↑
+                  # ↑
+    sub quux      # undef
+    {             # ↑
+    }             # ↑
+
+## identify\_associated\_sub
+
+This is a combination of `identify_sub` and `identify_next_sub` aimed at
+comments, as logically, any comment inside a `sub` pertains to the `sub`
+itself, but any comment **before** a `sub` may also pertain to that `sub`.
+
+    my $sub = identify_associated_sub( $element );
+
+Any `element` inside a `sub` is associated with the `sub` itself.
+
+Any `element` _before_ a `sub` is associated with the subsequent `sub`
+
+    package Foo;  # sub 'bar'
+                  # ↑
+    sub           # ↑
+    bar           # ↑
+    {             # ↑
+                  # ↑
+    }             # ↑
+                  # sub 'quux'
+    sub quux      # ↑
+    {             # ↑
+    }             # ↑
+                  # undef
+
+Returns `undef` if no `sub` can be determined.
+
+# AUTHOR
+
+Kent Fredric &lt;kentnl@cpan.org>
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2015 by Kent Fredric &lt;kentfredric@gmail.com>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
