@@ -13,6 +13,7 @@ my @files = (
     't/00-report-prereqs.t',
     't/aftersub.t',
     't/beforesub.t',
+    't/betweensubs.t',
     't/corpus/aftersub.pm',
     't/corpus/beforesub.pm',
     't/corpus/betweensubs.pm',
