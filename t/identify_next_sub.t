@@ -9,20 +9,6 @@ use PPI::Util qw( _Document );
 # ABSTRACT: test identify_next_sub
 
 {
-    my $dom = _Document('t/corpus/noscope.pm');
-    next_sub_is( $dom->find_first('PPI::Token::Comment'), undef, "no scopes means no subs" );
-}
-
-{
-    my $dom = _Document('t/corpus/aftersub.pm');
-    next_sub_is( $dom->find_first('PPI::Token::Comment'), undef, "statements after last sub are not before a sub" );
-}
-
-{
-    my $dom = _Document('t/corpus/beforesub.pm');
-    next_sub_is( $dom->find_first('PPI::Token::Comment'), 'foo', "statements before a sub are before that sub" );
-}
-{
     my $dom = _Document('t/corpus/betweensubs.pm');
     next_sub_is( $dom->find_first('PPI::Token::Comment'), 'bar', "statements between subs are before the second" );
 }
