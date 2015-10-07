@@ -9,10 +9,6 @@ use PPI::Util qw( _Document );
 # ABSTRACT: test identify_next_sub
 
 {
-    my $dom = _Document('t/corpus/betweensubs.pm');
-    next_sub_is( $dom->find_first('PPI::Token::Comment'), 'bar', "statements between subs are before the second" );
-}
-{
     my $dom = _Document('t/corpus/deepaftersibling.pm');
     next_sub_is( $dom->find_first('PPI::Token::Comment'), undef, "statements in a subsequent sibling of a sub not before a sub" );
 }

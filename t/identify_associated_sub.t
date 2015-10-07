@@ -9,10 +9,6 @@ use PPI::Util qw( _Document );
 # ABSTRACT: test identify_associated_sub
 
 {
-    my $dom = _Document('t/corpus/betweensubs.pm');
-    assoc_sub_is( $dom->find_first('PPI::Token::Comment'), 'bar', "statements between subs are associated with the second" );
-}
-{
     my $dom = _Document('t/corpus/deepaftersibling.pm');
     assoc_sub_is( $dom->find_first('PPI::Token::Comment'), undef, "statements after the last sub are unassociated(deeply)" );
 }
