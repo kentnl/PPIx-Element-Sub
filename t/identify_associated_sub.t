@@ -9,20 +9,6 @@ use PPI::Util qw( _Document );
 # ABSTRACT: test identify_associated_sub
 
 {
-    my $dom = _Document('t/corpus/noscope.pm');
-    assoc_sub_is( $dom->find_first('PPI::Token::Comment'), undef, "no scopes means no subs" );
-}
-
-{
-    my $dom = _Document('t/corpus/aftersub.pm');
-    assoc_sub_is( $dom->find_first('PPI::Token::Comment'), undef, "statements after last sub are unassociated" );
-}
-
-{
-    my $dom = _Document('t/corpus/beforesub.pm');
-    assoc_sub_is( $dom->find_first('PPI::Token::Comment'), 'foo', "statements before a sub are associated with it" );
-}
-{
     my $dom = _Document('t/corpus/betweensubs.pm');
     assoc_sub_is( $dom->find_first('PPI::Token::Comment'), 'bar', "statements between subs are associated with the second" );
 }

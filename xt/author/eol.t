@@ -11,6 +11,8 @@ my @files = (
     't/00-compile/lib_PPIx_Element_Sub_pm.t',
     't/00-report-prereqs.dd',
     't/00-report-prereqs.t',
+    't/aftersub.t',
+    't/beforesub.t',
     't/corpus/aftersub.pm',
     't/corpus/beforesub.pm',
     't/corpus/betweensubs.pm',
@@ -24,7 +26,8 @@ my @files = (
     't/identify_associated_sub.t',
     't/identify_next_sub.t',
     't/identify_sub.t',
-    't/lib/SubIs.pm'
+    't/lib/SubIs.pm',
+    't/noscope.t'
 );
 
 eol_unix_ok($_, { trailing_whitespace => 1 }) foreach @files;
