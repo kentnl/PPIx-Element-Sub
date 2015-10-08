@@ -19,6 +19,7 @@ assoc_sub_is( $badnode, undef, "no ->parent means unresolvable" );
 done_testing;
 
 {
+
     package BadNode;
     sub new { bless { %{ $_[1] || {} } }, $_[0] }
 }
