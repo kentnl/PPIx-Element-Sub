@@ -30,6 +30,12 @@ done_testing;
     sub new { bless { %{ $_[1] || {} } }, $_[0] }
     sub class { 'BadNode' }
     sub content { '' }
-    sub parent { $_[0]->{parent} }
+    sub parent { BadNode2->new({ parent => $_[0]->{parent} }) }
 }
-
+{
+  package BadNode2;
+  sub new { bless { %{ $_[1] || {} } }, $_[0] }
+  sub class { 'BadNode' }
+  sub content { '' }
+  sub parent { $_[0]->{parent} }
+}

@@ -30,7 +30,7 @@ my @files = (
     't/doublesub.t',
     't/inlinesub.t',
     't/insidesub.t',
-    't/internals/nochildren.t',
+    't/internals/impossiblesiblings.t',
     't/internals/noparent.t',
     't/lib/SubIs.pm',
     't/noscope.t'
