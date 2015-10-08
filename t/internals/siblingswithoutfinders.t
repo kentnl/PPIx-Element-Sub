@@ -4,7 +4,7 @@ use warnings;
 
 use Test::More;
 
-# ABSTRACT: Ensure arbitrary objects that don't have parents don't barf
+# ABSTRACT: Ensure arbitrary objects that don't have "find_first" don't barf
 
 use Test::More;
 use lib 't/lib';
@@ -23,8 +23,8 @@ my $sub = $dom->find_first('PPI::Statement::Sub');
 my $badnode = BadNode->new( { parent => $sub } );
 
 sub_is( $badnode, 'foo', "Siblings not considered, parent only" );
-next_sub_is( $badnode, undef, "no ->children means try parent for successive siblings" );
-assoc_sub_is( $badnode, 'foo', "no ->children means try parent" );
+next_sub_is( $badnode, undef, "no ->find_first on sibling means sibling is not traversed" );
+assoc_sub_is( $badnode, 'foo', "no ->find_first on sibling defers to parent" );
 
 done_testing;
 
