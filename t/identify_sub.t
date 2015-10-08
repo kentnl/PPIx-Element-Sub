@@ -9,10 +9,6 @@ use PPI::Util qw( _Document );
 # ABSTRACT: test identify_sub
 
 {
-    my $dom = _Document('t/corpus/deepchild.pm');
-    sub_is( $dom->find_first('PPI::Token::Comment'), 'foo', "statements deep in a sub are in that sub" );
-}
-{
     my $dom = _Document('t/corpus/inlinesub.pm');
     sub_is( $dom->find_first('PPI::Token::Comment'), 'foo', "statements hanging right of a sub are in that sub" );
 }
