@@ -34,6 +34,9 @@ my @files = (
     't/doublesub.t',
     't/inlinesub.t',
     't/insidesub.t',
+    't/internals/noparent.t',
+    't/internals/parentswithoutchildren.t',
+    't/internals/siblingswithoutfinders.t',
     't/lib/SubIs.pm',
     't/noscope.t'
 );
