@@ -27,6 +27,7 @@ t/00-report-prereqs.dd
 t/00-report-prereqs.t
 t/aftersub.t
 t/beforesub.t
+t/beforesubindeep.t
 t/betweensubs.t
 t/corpus/aftersub.pm
 t/corpus/beforesub.pm
@@ -44,9 +45,6 @@ t/deepchild.t
 t/doublesub.t
 t/inlinesub.t
 t/insidesub.t
-t/internals/noparent.t
-t/internals/parentswithoutchildren.t
-t/internals/siblingswithoutfinders.t
 t/lib/SubIs.pm
 t/noscope.t
 weaver.ini

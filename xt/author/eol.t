@@ -13,6 +13,7 @@ my @files = (
     't/00-report-prereqs.t',
     't/aftersub.t',
     't/beforesub.t',
+    't/beforesubindeep.t',
     't/betweensubs.t',
     't/corpus/aftersub.pm',
     't/corpus/beforesub.pm',
@@ -30,9 +31,6 @@ my @files = (
     't/doublesub.t',
     't/inlinesub.t',
     't/insidesub.t',
-    't/internals/noparent.t',
-    't/internals/parentswithoutchildren.t',
-    't/internals/siblingswithoutfinders.t',
     't/lib/SubIs.pm',
     't/noscope.t'
 );
