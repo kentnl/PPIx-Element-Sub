@@ -54,10 +54,9 @@ sub identify_next_sub {
         # return the first sub found
         return $sibling if $sibling->isa('PPI::Statement::Sub');
 
-        next unless $sibling->can('find_first');
-
         # If a sibling has children, a sub could be one of them
-        if ( defined( my $result = $sibling->find_first('PPI::Statement::Sub') ) ) {
+        # note: a false value == fail, but explit undef is invalid query
+        if ( $sibling->can('find_first') and my $result = $sibling->find_first('PPI::Statement::Sub') ) {
             return $result;
         }
     }
