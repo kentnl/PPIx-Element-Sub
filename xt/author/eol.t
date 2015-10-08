@@ -17,6 +17,7 @@ my @files = (
     't/betweensubs.t',
     't/corpus/aftersub.pm',
     't/corpus/beforesub.pm',
+    't/corpus/beforesubindeep.pm',
     't/corpus/betweensubs.pm',
     't/corpus/deepaftersibling.pm',
     't/corpus/deepbeforesibling.pm',
