@@ -24,9 +24,12 @@ my @files = (
     't/corpus/inlinesub.pm',
     't/corpus/insidesub.pm',
     't/corpus/noscope.pm',
-    't/identify_associated_sub.t',
-    't/identify_next_sub.t',
-    't/identify_sub.t',
+    't/deepaftersibling.t',
+    't/deepbeforesibling.t',
+    't/deepchild.t',
+    't/doublesub.t',
+    't/inlinesub.t',
+    't/insidesub.t',
     't/lib/SubIs.pm',
     't/noscope.t'
 );
