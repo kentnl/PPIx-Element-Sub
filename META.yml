@@ -1,0 +1,37 @@
+---
+abstract: 'Find subroutines associated with any element.'
+author:
+  - 'Kent Fredric <kentnl@cpan.org>'
+build_requires:
+  ExtUtils::MakeMaker: '0'
+  File::Spec: '0'
+  PPI::Util: '0'
+  Test::Builder: '0'
+  Test::More: '0.89'
+  lib: '0'
+  perl: '5.006'
+configure_requires:
+  ExtUtils::MakeMaker: '0'
+  perl: '5.006'
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 5.040, CPAN::Meta::Converter version 2.150005'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: '1.4'
+name: PPIx-Element-Sub
+provides:
+  PPIx::Element::Sub:
+    file: lib/PPIx/Element/Sub.pm
+    version: '0.001000'
+requires:
+  Exporter: '5.57'
+  Scalar::Util: '0'
+  perl: '5.006'
+  strict: '0'
+  warnings: '0'
+resources:
+  bugtracker: https://github.com/kentnl/PPIx-Element-Sub/issues
+  homepage: https://github.com/kentnl/PPIx-Element-Sub
+  repository: https://github.com/kentnl/PPIx-Element-Sub.git
+version: '0.001000'
