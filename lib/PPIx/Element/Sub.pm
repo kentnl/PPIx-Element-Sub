@@ -4,7 +4,7 @@ use warnings;
 
 package PPIx::Element::Sub;
 
-our $VERSION = '0.001000';
+our $VERSION = '0.001000'; # TRIAL
 
 # ABSTRACT: Find subroutines associated with any element.
 
