@@ -4,7 +4,7 @@ PPIx::Element::Sub - Find subroutines associated with any element.
 
 # VERSION
 
-version 0.001000
+version 0.001001
 
 # SYNOPSIS
 
