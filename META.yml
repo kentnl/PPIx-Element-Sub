@@ -23,7 +23,7 @@ name: PPIx-Element-Sub
 provides:
   PPIx::Element::Sub:
     file: lib/PPIx/Element/Sub.pm
-    version: '0.001000'
+    version: '0.001001'
 requires:
   Exporter: '5.57'
   Scalar::Util: '0'
@@ -34,4 +34,4 @@ resources:
   bugtracker: https://github.com/kentnl/PPIx-Element-Sub/issues
   homepage: https://github.com/kentnl/PPIx-Element-Sub
   repository: https://github.com/kentnl/PPIx-Element-Sub.git
-version: '0.001000'
+version: '0.001001'
